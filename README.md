@@ -31,23 +31,23 @@ Every topic is backed by **real-world practice tasks**, **clean Python code**, a
 
 ---
 
-## 🧠 How to Use This Repository
+## How to Use This Repository
 
-Each topic includes:
+- Each folder = **one main concept**
+- Folder names follow the roadmap order
+- Every folder must contain:
+  - Python code (`.py`)
+  - A `README.md` explaining:
+    - What the concept is
+    - Why it matters
+    - How your code works
+    - Time & space complexity where applicable
+- You move forward **only after**:
+  - Writing code without copy-pasting
+  - Explaining your solution clearly in README
+  - Handling edge cases
 
-- Concepts to learn
-- A **real-world practice task / mini project**
-- Common beginner mistakes
-- GitHub practice expectations
-
-### 📌 Mandatory Rule
-Every topic folder must contain:
-1. Python source code (`.py`)
-2. A `README.md` explaining:
-	- What problem the code solves
-	- Why this approach was chosen
-	- Common mistakes avoided
-	- Time & space complexity (for DSA topics)
+If you cannot explain it, you do not know it.
 
 ---
 
@@ -148,16 +148,36 @@ topic-name/
 
 ---
 
-## 🧪 GitHub Practice Expectations
+## Rules You Must Follow
 
-For **every topic**, the README should explain:
+- ❌ No copy-pasting solutions without understanding
+- ❌ No skipping README explanations
+- ❌ No “I’ll come back later”
+- ✅ Write clean, readable code
+- ✅ Refactor when you learn something better
+- ✅ Measure time/space complexity for DSA
 
-- Problem statement
-- Approach & design decisions
-- Common beginner mistakes
-- Time & space complexity (for DSA)
+---
 
-This ensures **deep understanding**, not shallow learning.
+## DSA Expectations (Be Honest With Yourself)
+
+You are expected to:
+- Understand **why** a solution works
+- Know **time and space complexity**
+- Choose the **right data structure**
+- Avoid brute force unless justified
+
+If your solution only works for small inputs, it’s wrong.
+
+---
+
+## Completion Criteria
+
+You are “done” only when:
+- You can explain every folder **without notes**
+- You can rebuild the projects from scratch
+- You can solve unseen problems using learned patterns
+- Your README files are clear enough for a stranger to learn from
 
 ---
 
