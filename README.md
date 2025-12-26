@@ -1,325 +1,53 @@
-# Learning Python & DSA — Zero to Mastery
+ # Learning Python & DSA — Zero to Mastery
 
-This repository is a structured learning path for Python programming and data structures & algorithms (DSA). It is designed to guide you from fundamentals to advanced topics with practical, real-world mini-projects and clear GitHub practice requirements for each topic.
+ This repository is a structured learning path for Python programming and data structures & algorithms (DSA). The table below presents each topic with concise subtopics, a practical project idea, common beginner mistakes, importance level, and what to include on GitHub for practice.
 
-How to use this repository
-- Follow the topics in order (1 → 40) or jump to sections you want to practice.
-- For each topic, add a small project or script folder (e.g., `01_python_setup/`) containing the requested code and a short README that explains what you built and what you learned.
-- Use the "GitHub Practice Requirement" field for what to implement and what to describe in that folder's README.
+ Please create a folder for each numbered topic using a two-digit prefix and a short slug (for example: `01-python-setup`). Each folder should contain a `code/` directory, a topic `README.md` that explains what you built and how to run it, and optional `tests/`.
 
-Repository structure suggestions
-- /01_python_setup
-- /02_syntax_indentation
-- /03_variables_data_types
-- ...
-- README.md (this file)
+ | Order / Level | Main Concept | Subtopics to Learn | Practice Task / Mini Project (real-world) | Common Beginner Mistakes | Importance | GitHub Practice Requirement |
+ |---:|---|---|---|---|---:|---|
+ | 1 – Fundamentals | Python Setup & Execution | • Install Python<br>• REPL<br>• .py files<br>• IDE vs terminal<br>• PATH | Local script runner: write and run scripts from terminal to automate tasks | Only using IDE; not understanding execution | Must-know | Code: runnable scripts; README: how Python runs code and how to run scripts |
+ | 2 – Fundamentals | Syntax & Indentation | • Indentation rules<br>• Comments<br>• Keywords | Fix broken scripts with common syntax and indentation errors | Ignoring indentation; mixing tabs/spaces | Must-know | Code: before/after fixes; README: syntax & indentation rules |
+ | 3 – Fundamentals | Variables & Data Types | • int<br>• float<br>• bool<br>• str<br>• None | CLI calculator handling numbers and edge cases | Type confusion; implicit conversions | Must-know | Code: calculator; README: types and examples |
+ | 4 – Fundamentals | Operators | • Arithmetic<br>• Comparison<br>• Logical<br>• Precedence | Finance calculator for balances, interest and comparisons | Precedence mistakes | Must-know | Code: examples and tests; README: operator precedence |
+ | 5 – Fundamentals | Input & Output | • input()<br>• print()<br>• f-strings | CLI form processor validating user input and producing structured output | String concat misuse; no validation | Must-know | Code: CLI app; README: I/O handling and examples |
+ | 6 – Fundamentals | Control Flow | • if<br>• elif<br>• else | Eligibility checker (age, requirements) with clear branching | Deep nesting; duplicated logic | Must-know | Code: checker; README: decision logic |
+ | 7 – Fundamentals | Loops | • for<br>• while<br>• break<br>• continue | Log analyzer that reads files and summarizes patterns | Infinite loops; off-by-one | Must-know | Code: analyzer; README: loop rationale |
+ | 8 – Fundamentals | Strings | • Slicing<br>• Methods<br>• Immutability | Password validator enforcing real-world rules | Manual parsing vs built-ins/regex | Must-know | Code: validator; README: string ops used |
+ | 9 – Fundamentals | Lists | • Indexing<br>• Slicing<br>• Methods | Task manager CRUD for tasks saved to file | Modifying list while iterating | Must-know | Code: task app; README: list patterns |
+ | 10 – Fundamentals | Tuples & Sets | • Tuple immutability<br>• Set uniqueness | Data deduplicator for imported datasets | Expecting order in sets | Useful | Code: cleaner; README: tuple vs set tradeoffs |
+ | 11 – Fundamentals | Dictionaries | • Key-value<br>• Iteration<br>• Methods | Config loader with defaults and validation | KeyErrors; poor key design | Must-know | Code: config loader; README: dict design |
+ | 12 – Fundamentals | Functions | • def<br>• Params<br>• Return<br>• Scope | Utility library with reusable helpers | God functions; no modularity | Must-know | Code: utils module; README: API & examples |
+ | 13 – Intermediate | Modules & Imports | • Import styles<br>• __name__ == '__main__' | Modularize a small project into packages | Circular imports; poor structure | Must-know | Code: modular app; README: structure & import patterns |
+ | 14 – Intermediate | File Handling | • Read/Write<br>• Text/CSV/JSON | File-based report generator producing CSV/JSON outputs | Not closing files; encoding issues | Must-know | Code: reports; README: file ops and encoding notes |
+ | 15 – Intermediate | Exception Handling | • try/except<br>• Custom errors | Robust parser that recovers from malformed inputs | Catching everything; hiding bugs | Must-know | Code: parser; README: error strategy and examples |
+ | 16 – Intermediate | Comprehensions | • List<br>• Dict<br>• Set comprehensions | Data transformer to reshape datasets | Overusing comprehensions, hurting readability | Must-know | Code: transformer; README: comprehension logic and readability notes |
+ | 17 – Intermediate | Generators & Iterators | • yield<br>• iter<br>• next | Stream processor handling large files lazily | Loading full data into memory | Must-know | Code: stream app; README: lazy evaluation benefits |
+ | 18 – Intermediate | Lambda & Built-ins | • lambda<br>• map<br>• filter<br>• zip | Data cleaning pipeline using functional tools | Overusing lambdas; unreadable code | Useful | Code: cleaner; README: when/why to use functional tools |
+ | 19 – Advanced | Debugging & Logging | • Traceback<br>• Logging levels<br>• Structured logs | Debug failing app and add logging/traceability | Relying solely on print debugging | Must-know | Code: logger integration; README: debug flow and log examples |
+ | 20 – Advanced | Type Hinting | • typing<br>• Annotations | Typed utilities checked with mypy | Ignoring types or inconsistent hints | Must-know | Code: typed modules; README: type hint guidelines and checks |
+ | 21 – Advanced | Testing Basics | • unittest<br>• pytest<br>• Assertions | Write unit tests for core utilities | No tests or brittle tests | Must-know | Code: tests/; README: how to run tests and coverage notes |
+ | 22 – OOP | Classes & Objects | • class<br>• object<br>• __init__ | Inventory system with persistence | Applying Java patterns blindly | Must-know | Code: OOP app; README: class design and examples |
+ | 23 – OOP | Encapsulation | • Private vars (convention)<br>• Properties | User profile model with validation | Exposing internals | Must-know | Code: model; README: encapsulation approach |
+ | 24 – OOP | Inheritance | • super()<br>• Method override | Role system modeling base/derived roles | Deep or incorrect hierarchies | Useful | Code: roles; README: inheritance tradeoffs |
+ | 25 – OOP | Polymorphism | • Duck typing<br>• Informal interfaces | Payment processor supporting multiple gateways | Rigid type checks instead of duck typing | Useful | Code: processor; README: polymorphism examples |
+ | 26 – OOP | Magic Methods | • __str__<br>• __len__<br>• __eq__ | Custom data type with dunder methods for ergonomics | Ignoring dunders that improve UX | Useful | Code: class; README: dunder use-cases and examples |
+ | 27 – OOP | Composition | • Has-a relationship vs Is-a | Plugin system where components are composed | Overusing inheritance | Must-know | Code: plugin system; README: composition patterns |
+ | 28 – DSA | Arrays (Lists) | • Indexing<br>• Traversal<br>• Complexity | Data analyzer summarizing array workloads | Ignoring time complexity | Must-know | Code: array ops; README: complexity notes |
+ | 29 – DSA | Strings (DSA view) | • Pattern matching<br>• Frequency analysis | Text analyzer for patterns and frequency maps | Repeated scans; poor algorithms | Must-know | Code: analyzer; README: algorithm choices and complexity |
+ | 30 – DSA | Recursion | • Base case<br>• Call stack<br>• Depth | File system traversal or tree algorithms | Missing base case; stack overflows | Must-know | Code: traversal; README: recursion flow and complexity |
+ | 31 – DSA | Linked Lists | • Singly list<br>• Traversal<br>• Insertion | History manager storing changes incrementally | Pointer/reference mistakes | Must-know | Code: linked list impl; README: design and ops |
+ | 32 – DSA | Stacks | • LIFO<br>• Push/Pop | Undo system for editor actions | Naive list usage without understanding costs | Must-know | Code: stack impl; README: performance notes |
+ | 33 – DSA | Queues | • FIFO<br>• collections.deque | Task scheduler with job dispatch | Inefficient front pops from lists | Must-know | Code: queue impl; README: performance and choice of deque |
+ | 34 – DSA | Hashing | • Hash maps<br>• Collisions | Cache system demonstrating basic hashing | Poor key design; collision issues | Must-know | Code: cache; README: hashing tradeoffs and complexity |
+ | 35 – DSA | Searching | • Linear<br>• Binary | Lookup tool with naive and binary modes | Binary search on unsorted data | Must-know | Code: search algorithms; README: complexity analysis |
+ | 36 – DSA | Sorting | • Bubble<br>• Merge<br>• Quick<br>• Stability | Ranking system with different sorts, explain tradeoffs | Reinventing built-ins without reason | Must-know | Code: sort implementations; README: stability and tradeoffs |
+ | 37 – DSA | Trees (Basics) | • Binary tree<br>• In/Pre/Post-order | Folder structure model mirroring filesystem | Confusing trees and graphs | Useful | Code: tree impl; README: traversal techniques |
+ | 38 – DSA | Graphs (Basics) | • Adjacency list<br>• BFS/DFS | Dependency resolver that detects cycles | Ignoring cycles | Useful | Code: graph tools; README: traversal & cycle detection |
+ | 39 – DSA | Complexity Analysis | • Big-O<br>• Time vs space | Annotate past solutions with Big-O and tradeoffs | Guessing complexity without measurement | Must-know | Code: annotated examples; README: complexity analysis methods |
+ | 40 – DSA | Problem Solving Patterns | • Two pointers<br>• Sliding window<br>• Hashing patterns | Solve 10 real interview problems mapping patterns to solutions | Random brute-force instead of patterns | Must-know | Code: solutions folder; README: pattern mapping and approach |
 
-Learning path
+ ---
 
-Fundamentals
+ If you'd like, I can now scaffold the first 3 topic folders (`01-python-setup`, `02-syntax-indentation`, `03-variables-data-types`) with a template `README.md`, an example script, and a basic test. Tell me how many topics you'd like scaffolded and I will create them.
 
-1. Python Setup & Execution
-- Subtopics: Install Python, REPL, .py files, IDE vs terminal, PATH
-- Practice: Local script runner — create scripts and run them from terminal
-- Common mistakes: Only using the IDE; not understanding how Python is executed
-- Importance: Must-know
-- GitHub practice: Add runnable example scripts and a README explaining how Python runs code and how to run your scripts
-
-2. Syntax & Indentation
-- Subtopics: Indentation rules, comments, keywords
-- Practice: Fix broken scripts with indentation and syntax errors
-- Common mistakes: Ignoring indentation (mixing spaces/tabs)
-- Importance: Must-know
-- GitHub practice: Provide before/after broken scripts and README summarizing syntax rules
-
-3. Variables & Data Types
-- Subtopics: int, float, bool, str, None
-- Practice: CLI calculator handling different types
-- Common mistakes: Type confusion and implicit conversions
-- Importance: Must-know
-- GitHub practice: Calculator code and README explaining types & usage
-
-4. Operators
-- Subtopics: arithmetic, comparison, logical, precedence
-- Practice: Finance calculator that computes balances and interest
-- Common mistakes: Operator precedence misunderstandings
-- Importance: Must-know
-- GitHub practice: Calculation examples and README about operator precedence
-
-5. Input & Output
-- Subtopics: input(), print(), f-strings
-- Practice: CLI form processor that validates and prints structured output
-- Common mistakes: String concatenation pitfalls, not validating input
-- Importance: Must-know
-- GitHub practice: CLI app and README describing I/O handling
-
-6. Control Flow
-- Subtopics: if, elif, else
-- Practice: Eligibility checker (age, criteria) with clear branching
-- Common mistakes: Deep nesting and duplicated logic
-- Importance: Must-know
-- GitHub practice: Checker program and README explaining decision logic
-
-7. Loops
-- Subtopics: for, while, break, continue
-- Practice: Log analyzer that scans files and collects stats
-- Common mistakes: Infinite loops and off-by-one errors
-- Importance: Must-know
-- GitHub practice: Analyzer and README explaining loop choices
-
-8. Strings
-- Subtopics: slicing, methods, immutability
-- Practice: Password validator that enforces rules and patterns
-- Common mistakes: Manual parsing instead of using string methods/regex
-- Importance: Must-know
-- GitHub practice: Validator code and README on string operations
-
-9. Lists
-- Subtopics: indexing, slicing, methods
-- Practice: Task manager storing and modifying tasks
-- Common mistakes: Modifying a list while iterating over it
-- Importance: Must-know
-- GitHub practice: Task app and README describing list usage patterns
-
-10. Tuples & Sets
-- Subtopics: tuple immutability, set uniqueness
-- Practice: Data deduplicator that removes duplicates from datasets
-- Common mistakes: Expecting sets to preserve order
-- Importance: Useful
-- GitHub practice: Cleaner script and README comparing tuple vs set
-
-11. Dictionaries
-- Subtopics: key-value mapping, iteration, methods
-- Practice: Config loader that reads key-value pairs and provides defaults
-- Common mistakes: KeyErrors from missing keys
-- Importance: Must-know
-- GitHub practice: Config app and README on dict design and pitfalls
-
-12. Functions
-- Subtopics: def, parameters, return, scope
-- Practice: Utility library with reusable helper functions
-- Common mistakes: God functions (too large) and not using modularity
-- Importance: Must-know
-- GitHub practice: Utils module and README describing function design and examples
-
-Intermediate
-
-13. Modules & Imports
-- Subtopics: import styles, __name__ == '__main__'
-- Practice: Modularize a project into packages and modules
-- Common mistakes: Circular imports and unclear package structure
-- Importance: Must-know
-- GitHub practice: Modular app and README describing project structure and import patterns
-
-14. File Handling
-- Subtopics: read/write, text, CSV, JSON
-- Practice: File-based report generator that reads inputs and writes reports
-- Common mistakes: Not closing files or improper encoding handling
-- Importance: Must-know
-- GitHub practice: Reports code and README on file operations and formats
-
-15. Exception Handling
-- Subtopics: try/except, raising custom errors
-- Practice: Robust parser that handles malformed inputs gracefully
-- Common mistakes: Catching all exceptions blindly
-- Importance: Must-know
-- GitHub practice: Parser with tests and README explaining error strategy
-
-16. Comprehensions
-- Subtopics: list, dict, set comprehensions
-- Practice: Data transformer that converts raw data into structured form
-- Common mistakes: Overusing comprehensions and hurting readability
-- Importance: Must-know
-- GitHub practice: Transformer code and README explaining comprehension logic
-
-17. Generators & Iterators
-- Subtopics: yield, iter, next
-- Practice: Stream processor that handles large datasets lazily
-- Common mistakes: Loading entire datasets into memory
-- Importance: Must-know
-- GitHub practice: Stream app and README showing lazy evaluation benefits
-
-18. Lambda & Built-ins
-- Subtopics: lambda, map, filter, zip
-- Practice: Data cleaner using functional tools for pipelines
-- Common mistakes: Overusing lambdas making code unreadable
-- Importance: Useful
-- GitHub practice: Cleaner utility and README on functional tools
-
-Advanced
-
-19. Debugging & Logging
-- Subtopics: traceback, logging levels, structured logs
-- Practice: Debug a failing app and produce useful logs
-- Common mistakes: Relying only on print statements
-- Importance: Must-know
-- GitHub practice: Logger integration and README describing debug flow
-
-20. Type Hinting
-- Subtopics: typing module, annotations, mypy basics
-- Practice: Typed utilities with static checks
-- Common mistakes: Ignoring types or using them inconsistently
-- Importance: Must-know
-- GitHub practice: Typed code and README about type hints and checks
-
-21. Testing Basics
-- Subtopics: unittest, pytest, assertions
-- Practice: Write tests for existing code to ensure correctness
-- Common mistakes: No tests or fragile tests
-- Importance: Must-know
-- GitHub practice: Tests folder and README summarizing test coverage and how to run tests
-
-Object-Oriented Programming (OOP)
-
-22. Classes & Objects
-- Subtopics: class, object, __init__
-- Practice: Inventory system with item classes and persistence
-- Common mistakes: Applying Java-style patterns incorrectly in Python
-- Importance: Must-know
-- GitHub practice: OOP app and README on class design
-
-23. Encapsulation
-- Subtopics: private variables (convention), properties
-- Practice: User profile model with validation and encapsulation
-- Common mistakes: Exposing internals directly
-- Importance: Must-know
-- GitHub practice: Model code and README on encapsulation
-
-24. Inheritance
-- Subtopics: super(), method override
-- Practice: Role system demonstrating base and derived behavior
-- Common mistakes: Deep inheritance hierarchies
-- Importance: Useful
-- GitHub practice: Roles code and README about inheritance tradeoffs
-
-25. Polymorphism
-- Subtopics: duck typing, informal interfaces
-- Practice: Payment processor supporting multiple gateways with same interface
-- Common mistakes: Rigid type checks instead of duck typing
-- Importance: Useful
-- GitHub practice: Processor code and README on polymorphism
-
-26. Magic Methods
-- Subtopics: __str__, __len__, __eq__ and other dunder methods
-- Practice: Custom data type implementing common dunder methods
-- Common mistakes: Ignoring dunder methods that make objects ergonomic
-- Importance: Useful
-- GitHub practice: Custom class and README explaining dunder usage
-
-27. Composition
-- Subtopics: has-a relationship vs is-a
-- Practice: Plugin system or composed services
-- Common mistakes: Overusing inheritance where composition is better
-- Importance: Must-know
-- GitHub practice: Plugin system and README on composition patterns
-
-Data Structures & Algorithms (DSA)
-
-28. Arrays (Lists)
-- Subtopics: indexing, traversal, complexity analysis
-- Practice: Data analyzer that processes and summarizes arrays
-- Common mistakes: Ignoring time complexity of operations
-- Importance: Must-know
-- GitHub practice: Array operations and README with complexity notes
-
-29. Strings (DSA view)
-- Subtopics: pattern matching, frequency analysis
-- Practice: Text analyzer for finding common patterns and frequency
-- Common mistakes: Repeated scans instead of efficient algorithms
-- Importance: Must-know
-- GitHub practice: Analyzer and README showing algorithm choices
-
-30. Recursion
-- Subtopics: base case, call stack, recursion depth
-- Practice: File system traversal or tree-based problem using recursion
-- Common mistakes: Missing base case or deep recursion without tail optimization
-- Importance: Must-know
-- GitHub practice: Traversal code and README explaining recursion flow
-
-31. Linked Lists
-- Subtopics: singly linked list, traversal, insertion
-- Practice: History manager that stores changes using a linked list
-- Common mistakes: Pointer/reference confusion
-- Importance: Must-know
-- GitHub practice: Linked list implementation and README describing structure
-
-32. Stacks
-- Subtopics: LIFO, push/pop
-- Practice: Undo system for an editor or app
-- Common mistakes: Using Python lists naively without understanding performance
-- Importance: Must-know
-- GitHub practice: Stack impl and README explaining use-cases
-
-33. Queues
-- Subtopics: FIFO, collections.deque
-- Practice: Task scheduler using a queue for job dispatch
-- Common mistakes: Inefficient pops from front of a list
-- Importance: Must-know
-- GitHub practice: Queue impl and README about performance
-
-34. Hashing
-- Subtopics: hash maps, handling collisions
-- Practice: Simple cache system with hashing basics
-- Common mistakes: Poor key choices leading to collisions
-- Importance: Must-know
-- GitHub practice: Cache code and README explaining hashing tradeoffs
-
-35. Searching
-- Subtopics: linear search, binary search and their complexities
-- Practice: Lookup tool that supports both naive and binary searches
-- Common mistakes: Misusing binary search on unsorted data
-- Importance: Must-know
-- GitHub practice: Search algorithms and README analyzing complexity
-
-36. Sorting
-- Subtopics: bubble, merge, quick; stability and tradeoffs
-- Practice: Ranking system that sorts items by metrics and explains tradeoffs
-- Common mistakes: Reinventing built-in sort without understanding costs
-- Importance: Must-know
-- GitHub practice: Sorting implementations and README detailing tradeoffs
-
-37. Trees (Basics)
-- Subtopics: binary tree, traversal (inorder, preorder, postorder)
-- Practice: Folder structure model that mirrors filesystem hierarchies
-- Common mistakes: Confusing trees and graphs
-- Importance: Useful
-- GitHub practice: Tree code and README on traversal techniques
-
-38. Graphs (Basics)
-- Subtopics: adjacency list, BFS, DFS
-- Practice: Dependency resolver that detects cycles and orders tasks
-- Common mistakes: Ignoring cycles and wrong traversal choices
-- Importance: Useful
-- GitHub practice: Graph tools and README explaining traversal and cycle detection
-
-39. Complexity Analysis
-- Subtopics: Big-O, time vs space tradeoffs
-- Practice: Analyze past solutions and annotate their complexity
-- Common mistakes: Guessing complexity without measurement
-- Importance: Must-know
-- GitHub practice: Annotated code and README with complexity analysis
-
-40. Problem Solving Patterns
-- Subtopics: two pointers, sliding window, hashing patterns
-- Practice: Solve 10 real interview-style problems using the patterns
-- Common mistakes: Random brute-force solutions instead of pattern identification
-- Importance: Must-know
-- GitHub practice: Solutions folder with problem explanations and README mapping patterns to solutions
-
-Contributing & GitHub practice
-- For each topic create a folder named with a two-digit prefix and a short slug (e.g., `01-python-setup`).
-- Inside each folder include:
-	- code/ : runnable code or module
-	- README.md : short explanation of what you built, why, and what to run
-	- tests/ (optional but recommended): small tests demonstrating correctness
-- Commit messages: keep them clear and reference the topic number (e.g., "Add CLI calculator for 03-variables").
-
-Next steps (recommended)
-- Start by adding the first 5 topics with simple code and READMEs.
-- Add basic tests for the functions you implement.
-- Open a PR with small changes and request feedback.
-
-License
-- Add a license file if you plan to publish this repo publicly (MIT is a common choice).
-
-Enjoy learning — work consistently and build the projects to reinforce each concept.
